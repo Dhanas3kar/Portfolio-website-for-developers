@@ -29,7 +29,9 @@ function TechOrb({ position, color, text, delay = 0 }: TechOrbProps) {
   const textRef = useRef<THREE.Mesh>(null);
 
   useFrame((state) => {
-    if (!meshRef.current || !textRef.current) return;
+    if (!meshRef.current || !textRef.current) {
+      return;
+    }
 
     try {
       const time = state.clock.getElapsedTime() + delay;
